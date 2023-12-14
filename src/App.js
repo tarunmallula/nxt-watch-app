@@ -1,4 +1,4 @@
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import {Component} from 'react'
 
 import Login from './components/login'
@@ -105,8 +105,7 @@ class App extends Component {
                 path="/videos/:id"
                 component={VideoItemDetails}
               />
-              <ProtectedRoute exact path="/not-found" component={NotFound} />
-              <Redirect to="/not-found" />
+              <Route path="/not-found" component={NotFound} />
             </Switch>
           </ActiveMenuContext.Provider>
         </SavedVideosContext.Provider>
